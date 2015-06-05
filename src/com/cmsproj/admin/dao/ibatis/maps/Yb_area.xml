@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Yb_area">
+  <typeAlias alias="Yb_area" type="com.cmsproj.admin.model.Yb_area"/>
+  <resultMap id="result" class="Yb_area">
+    <result property="id" column="id" columnIndex="1"/>
+  	<result property="level" column="level" columnIndex="2"/>
+  	<result property="is_end" column="is_end" columnIndex="3"/>
+  	<result property="name" column="name" columnIndex="4"/>
+  	<result property="fullname" column="fullname" columnIndex="5"/>
+  </resultMap>
+  
+<select id="getYbAreaList" resultMap="result">
+    select * 
+    from yb_area
+    order by id asc
+  </select>
+</sqlMap>
